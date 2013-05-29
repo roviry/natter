@@ -50,6 +50,14 @@ describe "User pages" do
             it "should create a user" do
                 expect { click_button submit }.to change(User, :count).by(1)
             end
+            
+            describe "new user logedin" do
+                before { click_button submit }
+                
+                it { should have_link('Logout') }
+
+            end
+            
         end
     end
 end
